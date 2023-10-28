@@ -7,7 +7,6 @@ public class RegisterController: ControllerBase
     [HttpPost("api/register")]
     public async Task<IActionResult> RegisterAsync([FromBody] RegistrationRequest request)
     {
-        Console.WriteLine(request == null ? "null" : request);
         return Ok();
     }
 }

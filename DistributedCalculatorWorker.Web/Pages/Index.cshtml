@@ -38,7 +38,7 @@
             createJobEndpoint: document.getElementById("createjobendpoint").value,
             errorCheckEndpoint: document.getElementById("errorcheckendpoint").value,
         }
-        console.log("body: ", body)
+
         fetch("/api/register", {
             method: "POST",
             headers: {
