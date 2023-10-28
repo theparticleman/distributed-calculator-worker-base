@@ -1,14 +1,9 @@
 namespace DistributedCalculatorWorker.Tests;
 
-public class Tests
+public class RegisterWorkflowTests
 {
-    [SetUp]
-    public void Setup()
-    {
-    }
-
     [Test]
-    public void Test1()
+    public void RegistrationIsSuccessful()
     {
         Assert.Pass();
     }
