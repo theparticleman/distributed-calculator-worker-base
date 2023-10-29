@@ -5,4 +5,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="7.0.3" />
+    <PackageReference Include="TestableHttp" Version="1.0.7" />
+  </ItemGroup>
+
 </Project>

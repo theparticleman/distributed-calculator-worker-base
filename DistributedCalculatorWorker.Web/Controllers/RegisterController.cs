@@ -1,12 +1,21 @@
+using DistributedCalculatorWorker.Web.Domain;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DistributedCalculatorWorker.Web;
 
 public class RegisterController: ControllerBase
 {
+    private readonly RegisterWorkflow registerWorkflow;
+
+    public RegisterController(RegisterWorkflow registerWorkflow)
+    {
+        this.registerWorkflow = registerWorkflow;
+    }
+
     [HttpPost("api/register")]
     public async Task<IActionResult> RegisterAsync([FromBody] RegistrationRequest request)
     {
+        await registerWorkflow.RegisterWorkerAsync(request.RegistrationUrl, request.WorkerId, request.TeamName, request.CreateJobEndpoint, request.ErrorCheckEndpoint);
         return Ok();
     }
 }
