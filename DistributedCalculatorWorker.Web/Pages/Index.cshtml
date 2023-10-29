@@ -8,6 +8,10 @@
 
 <div style="display: flex; flex-direction: column; gap: 16px;">
     <div>
+        <label for="registrationurl">Registration URL</label>
+        <input id="registrationurl" value="http://localhost/register" />
+    </div>
+    <div>
         <label for="workerid">Worker ID</label>
         <input id="workerid" />
     </div>
@@ -33,7 +37,8 @@
 
     function register() {
         const body = {
-            WorkerId : document.getElementById("workerid").value,
+            registrationUrl : document.getElementById("registrationurl").value,
+            workerId : document.getElementById("workerid").value,
             teamName: document.getElementById("teamname").value,
             createJobEndpoint: document.getElementById("createjobendpoint").value,
             errorCheckEndpoint: document.getElementById("errorcheckendpoint").value,

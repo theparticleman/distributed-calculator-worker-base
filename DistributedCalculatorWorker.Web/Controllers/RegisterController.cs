@@ -13,6 +13,7 @@ public class RegisterController: ControllerBase
 
 public record RegistrationRequest
 {
+    public string RegistrationUrl { get; set; }
     public string WorkerId { get; set; }
     public string TeamName { get; set; }
     public string CreateJobEndpoint { get; set; }
