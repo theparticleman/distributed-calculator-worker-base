@@ -32,7 +32,6 @@ public class RegisterWorkflow
         };
         request.Headers.Add("Content-Type", "application/json");
         var response = await httpClient.ExecuteAsync(request);
-        System.Console.WriteLine(response.Body);
     }
 }
 
