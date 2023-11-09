@@ -1,13 +1,13 @@
-using DistributedCalculatorWorker.Web;
-using DistributedCalculatorWorker.Web.Domain;
 using TestableHttp;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSingleton<RegisterWorkflow>();
-builder.Services.AddSingleton<IJsonSerializer, JsonSerializer>();
+builder.Services
+    .Scan(scan => scan.FromAssemblyOf<Program>()
+    .AddClasses()
+    .AsSelf()
+    .AsImplementedInterfaces());
 DependencyInjectionConfig.ConfigureServices(builder.Services);
-
 
 // Add services to the container.
 builder.Services.AddRazorPages();
